@@ -1,18 +1,16 @@
 {
-  "name": "cubit-store-backend",
-  "version": "1.0.0",
-  "description": "CubitStore – Smart B2B Packaging Platform Backend",
-  "author": "Cubit Store Team",
+  "name": "medusa-b2b-starter",
+  "version": "0.0.1",
+  "description": "A starter for Medusa B2B projects.",
+  "author": "Medusa (https://medusajs.com)",
   "license": "MIT",
   "keywords": [
-    "cubitstore",
-    "b2b",
-    "ecommerce",
+    "sqlite",
     "postgres",
     "typescript",
-    "commerce",
+    "ecommerce",
     "headless",
-    "api"
+    "medusa"
   ],
   "scripts": {
     "build": "medusa build",
@@ -38,9 +36,8 @@
     "awilix": "^8.0.1",
     "openai": "^5.6.0",
     "pg": "^8.13.0",
-    "posthog-node": "^4.17.1",
-    "tailwindcss": "^3.4.0",
-    "zod": "3.23.8"
+    "pg-native": "^3.5.1",
+    "zod": "3.22.4"
   },
   "devDependencies": {
     "@medusajs/test-utils": "2.8.4",
