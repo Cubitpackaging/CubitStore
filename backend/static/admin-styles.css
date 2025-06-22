@@ -1,0 +1,49 @@
+/* CubitStore Admin Panel Custom Styling */
+
+/* Replace Medusa logo with CubitStore logo */
+[data-testid="sidebar-logo"] img,
+.logo img,
+.header-logo img {
+  content: url('/cubit-logo-light.png') !important;
+  max-height: 40px !important;
+  width: auto !important;
+}
+
+/* Dark theme logo */
+[data-theme="dark"] [data-testid="sidebar-logo"] img,
+[data-theme="dark"] .logo img,
+[data-theme="dark"] .header-logo img {
+  content: url('/cubit-logo-dark.png') !important;
+}
+
+/* Custom title in admin panel */
+.page-title::before {
+  content: "CubitStore Admin – ";
+  font-weight: 600;
+  color: #007CFF;
+}
+
+/* Hide original Medusa text */
+[data-testid="medusa-text"],
+.medusa-brand-text {
+  display: none !important;
+}
+
+/* Custom colors for CubitStore branding */
+:root {
+  --admin-primary-color: #007CFF;
+  --admin-secondary-color: #0066CC;
+}
+
+/* Update primary buttons to match brand */
+.btn-primary,
+.button-primary {
+  background-color: var(--admin-primary-color) !important;
+  border-color: var(--admin-primary-color) !important;
+}
+
+.btn-primary:hover,
+.button-primary:hover {
+  background-color: var(--admin-secondary-color) !important;
+  border-color: var(--admin-secondary-color) !important;
+} 
