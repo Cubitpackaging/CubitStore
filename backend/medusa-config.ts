@@ -28,7 +28,7 @@ module.exports = defineConfig({
     vite: {
       define: {
         __MEDUSA_ADMIN_TITLE__: JSON.stringify("Cubit Store Admin"),
-        __MEDUSA_ADMIN_DESCRIPTION__: JSON.stringify("Cubit Store B2B Commerce Admin Panel")
+        __MEDUSA_ADMIN_DESCRIPTION__: JSON.stringify("CubitStore – Smart B2B Packaging Platform Backend")
       }
     }
   },
