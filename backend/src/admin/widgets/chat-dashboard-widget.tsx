@@ -20,7 +20,7 @@ const ChatDashboardWidget = () => {
 
   const MERCHANT_USER = {
     login: 'merchant-cubitstore',
-    password: 'MerchantSupport2024!',
+    password: 'CubitStoreSupport2024!',
   }
 
   // Initialize ConnectyCube chat

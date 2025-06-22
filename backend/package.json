@@ -1,16 +1,18 @@
 {
-  "name": "medusa-b2b-starter",
-  "version": "0.0.1",
-  "description": "A starter for Medusa B2B projects.",
-  "author": "Medusa (https://medusajs.com)",
+  "name": "cubit-store-backend",
+  "version": "1.0.0",
+  "description": "CubitStore - Modern B2B Commerce Platform Backend",
+  "author": "Cubit Store Team",
   "license": "MIT",
   "keywords": [
-    "sqlite",
+    "cubitstore",
+    "b2b",
+    "ecommerce",
     "postgres",
     "typescript",
-    "ecommerce",
+    "commerce",
     "headless",
-    "medusa"
+    "api"
   ],
   "scripts": {
     "build": "medusa build",
