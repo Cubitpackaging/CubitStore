@@ -1,16 +1,16 @@
 {
-  "name": "medusa-b2b-starter",
-  "version": "0.0.1",
-  "description": "A starter for Medusa B2B projects.",
-  "author": "Medusa (https://medusajs.com)",
+  "name": "cubitstore-backend",
+  "version": "1.0.0",
+  "description": "CubitStore B2B Backend API",
+  "author": "CubitStore",
   "license": "MIT",
   "keywords": [
-    "sqlite",
     "postgres",
     "typescript",
     "ecommerce",
     "headless",
-    "medusa"
+    "medusa",
+    "b2b"
   ],
   "scripts": {
     "build": "medusa build",
@@ -36,14 +36,15 @@
     "awilix": "^8.0.1",
     "openai": "^5.6.0",
     "pg": "^8.13.0",
-    "pg-native": "^3.5.1",
-    "zod": "3.22.4"
+    "posthog-node": "^4.0.1",
+    "tailwindcss": "^3.4.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@medusajs/test-utils": "2.8.4",
     "@medusajs/ui-preset": "2.8.4",
     "@mikro-orm/cli": "6.4.3",
-    "@swc/core": "^1.5.7",
+    "@swc/core": "1.5.7",
     "@swc/jest": "^0.2.36",
     "@types/jest": "^29.5.14",
     "@types/node": "^20.0.0",
