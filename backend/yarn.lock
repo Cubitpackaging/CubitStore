@@ -8366,6 +8366,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bindings@npm:1.5.0":
+  version: 1.5.0
+  resolution: "bindings@npm:1.5.0"
+  dependencies:
+    file-uri-to-path: "npm:1.0.0"
+  checksum: 10c0/3dab2491b4bb24124252a91e656803eac24292473e56554e35bbfe3cc1875332cfa77600c3bac7564049dc95075bf6fcc63a4609920ff2d64d0fe405fcf0d4ba
+  languageName: node
+  linkType: hard
+
 "bl@npm:^4.1.0":
   version: 4.1.0
   resolution: "bl@npm:4.1.0"
@@ -10124,6 +10133,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"file-uri-to-path@npm:1.0.0":
+  version: 1.0.0
+  resolution: "file-uri-to-path@npm:1.0.0"
+  checksum: 10c0/3b545e3a341d322d368e880e1c204ef55f1d45cdea65f7efc6c6ce9e0c4d22d802d5629320eb779d006fe59624ac17b0e848d83cc5af7cd101f206cb704f5519
+  languageName: node
+  linkType: hard
+
 "fill-range@npm:^7.1.1":
   version: 7.1.1
   resolution: "fill-range@npm:7.1.1"
@@ -11834,6 +11850,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"libpq@npm:^1.8.15":
+  version: 1.8.15
+  resolution: "libpq@npm:1.8.15"
+  dependencies:
+    bindings: "npm:1.5.0"
+    nan: "npm:~2.22.2"
+    node-gyp: "npm:latest"
+  checksum: 10c0/6a54e52065c20c294a0bf643db24e489a13aaef0e6ad798bb37344b8e156db1a4cf3c07052d341934730cb870250b075a21e97258e9b1fdf275b18a13a1cba59
+  languageName: node
+  linkType: hard
+
 "lilconfig@npm:^3.0.0, lilconfig@npm:^3.1.3":
   version: 3.1.3
   resolution: "lilconfig@npm:3.1.3"
@@ -12138,7 +12165,6 @@ __metadata:
     "@medusajs/test-utils": "npm:2.8.4"
     "@medusajs/ui": "npm:4.0.14"
     "@medusajs/ui-preset": "npm:2.8.4"
-    "@medusajs/workflows-sdk": "npm:2.8.4"
     "@mikro-orm/cli": "npm:6.4.3"
     "@mikro-orm/core": "npm:6.4.3"
     "@mikro-orm/knex": "npm:6.4.3"
@@ -12154,15 +12180,14 @@ __metadata:
     jest: "npm:^29.7.0"
     openai: "npm:^5.6.0"
     pg: "npm:^8.13.0"
-    posthog-node: "npm:^4.18.0"
+    pg-native: "npm:^3.5.1"
     prop-types: "npm:^15.8.1"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
-    tailwindcss: "npm:^3.4.0"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.5.3"
     vite: "npm:^5.2.11"
-    zod: "npm:^3.23.8"
+    zod: "npm:3.22.4"
   languageName: unknown
   linkType: soft
 
@@ -12540,6 +12565,15 @@ __metadata:
     object-assign: "npm:^4.0.1"
     thenify-all: "npm:^1.0.0"
   checksum: 10c0/103114e93f87362f0b56ab5b2e7245051ad0276b646e3902c98397d18bb8f4a77f2ea4a2c9d3ad516034ea3a56553b60d3f5f78220001ca4c404bd711bd0af39
+  languageName: node
+  linkType: hard
+
+"nan@npm:~2.22.2":
+  version: 2.22.2
+  resolution: "nan@npm:2.22.2"
+  dependencies:
+    node-gyp: "npm:latest"
+  checksum: 10c0/971f963b8120631880fa47a389c71b00cadc1c1b00ef8f147782a3f4387d4fc8195d0695911272d57438c11562fb27b24c4ae5f8c05d5e4eeb4478ba51bb73c5
   languageName: node
   linkType: hard
 
@@ -13082,6 +13116,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"pg-native@npm:^3.5.1":
+  version: 3.5.1
+  resolution: "pg-native@npm:3.5.1"
+  dependencies:
+    libpq: "npm:^1.8.15"
+    pg-types: "npm:2.2.0"
+  checksum: 10c0/77b7ac7fdeb01ea8fb19b62f61483a9efa9c402847aef0048564a65cc7633bcf0496b8a2e6d1f52571e948b1dd77399f8ce92da818cf02e58ba26d28d2b19a3b
+  languageName: node
+  linkType: hard
+
 "pg-pool@npm:^3.10.1, pg-pool@npm:^3.7.0":
   version: 3.10.1
   resolution: "pg-pool@npm:3.10.1"
@@ -13351,15 +13395,6 @@ __metadata:
   dependencies:
     xtend: "npm:^4.0.0"
   checksum: 10c0/c1734c3cb79e7f22579af0b268a463b1fa1d084e742a02a7a290c4f041e349456f3bee3b4ee0bb3f226828597f7b76deb615c1b857db9a742c45520100456272
-  languageName: node
-  linkType: hard
-
-"posthog-node@npm:^4.18.0":
-  version: 4.18.0
-  resolution: "posthog-node@npm:4.18.0"
-  dependencies:
-    axios: "npm:^1.8.2"
-  checksum: 10c0/aa30427599d15b98357b5a88096a8b38b0812c71af49eb54fce0a46164521c247c3b064973931c3471cf84cb7f0e391bfc5d6174cd038f75f8c02cb8a9626cff
   languageName: node
   linkType: hard
 
@@ -14850,7 +14885,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^3.3.6, tailwindcss@npm:^3.4.0":
+"tailwindcss@npm:^3.3.6":
   version: 3.4.17
   resolution: "tailwindcss@npm:3.4.17"
   dependencies:
@@ -15789,12 +15824,5 @@ __metadata:
   version: 3.22.4
   resolution: "zod@npm:3.22.4"
   checksum: 10c0/7578ab283dac0eee66a0ad0fc4a7f28c43e6745aadb3a529f59a4b851aa10872b3890398b3160f257f4b6817b4ce643debdda4fb21a2c040adda7862cab0a587
-  languageName: node
-  linkType: hard
-
-"zod@npm:^3.23.8":
-  version: 3.25.67
-  resolution: "zod@npm:3.25.67"
-  checksum: 10c0/80a0cab3033272c4ab9312198081f0c4ea88e9673c059aa36dc32024906363729db54bdb78f3dc9d5529bd1601f74974d5a56c0a23e40c6f04a9270c9ff22336
   languageName: node
   linkType: hard

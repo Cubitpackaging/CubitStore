@@ -61,7 +61,7 @@ export function CompanyForm({
             name="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="contact@cubitstore.com"
+            placeholder="admin@cubitstore.com"
           />
           <Label size="xsmall">Company Address</Label>
           <Input

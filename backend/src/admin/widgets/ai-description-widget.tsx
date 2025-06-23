@@ -2,7 +2,7 @@ import { defineWidgetConfig } from "@medusajs/admin-sdk"
 import { Container, Heading, Text, Button, Textarea, Badge } from "@medusajs/ui"
 import { useState } from "react"
 
-// Arrow function component for Cubit Store AI Description Generator
+// Arrow function component as required by Cubit Store admin panel
 const AIDescriptionWidget = ({ data }: any) => {
   const [generatedDescription, setGeneratedDescription] = useState("")
   const [isGenerating, setIsGenerating] = useState(false)
