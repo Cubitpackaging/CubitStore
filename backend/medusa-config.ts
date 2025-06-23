@@ -22,7 +22,12 @@ module.exports = defineConfig({
     },
   },
   admin: {
-    // Admin configuration will be added here as needed
+    backendUrl: process.env.MEDUSA_BACKEND_URL || "http://localhost:9000",
+    path: "/app",
+    outDir: ".medusa/admin",
+    sources: ["./src/admin"],
+    title: "Cubit Store Admin",
+    favicon: "/favicon.ico"
   },
   plugins: [
     // Plugins will be added here as needed
