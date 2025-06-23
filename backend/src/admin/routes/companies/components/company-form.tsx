@@ -45,7 +45,7 @@ export function CompanyForm({
             name="name"
             value={formData.name}
             onChange={handleChange}
-            placeholder="Cubit Store"
+            placeholder="Medusa"
           />
           <Label size="xsmall">Company Phone</Label>
           <Input
@@ -61,7 +61,7 @@ export function CompanyForm({
             name="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="admin@cubitstore.com"
+            placeholder="medusa@medusa.com"
           />
           <Label size="xsmall">Company Address</Label>
           <Input
