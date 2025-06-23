@@ -112,7 +112,7 @@ yarn medusa db:migrate
 yarn run seed
 
 # Create admin user
-yarn medusa user -e admin@cubitpackaging.com -p admin123 -i admin
+yarn medusa user -e admin@cubitstore.com -p admin123 -i admin
 
 # Start backend server
 yarn dev
@@ -144,7 +144,7 @@ yarn dev
 - **Storefront**: http://localhost:8000
 
 **Default Admin Credentials**:
-- Email: `admin@cubitpackaging.com`
+- Email: `admin@cubitstore.com`
 - Password: `admin123`
 
 &nbsp;
