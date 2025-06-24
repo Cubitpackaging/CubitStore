@@ -1,0 +1,47 @@
+name: cubit-store-backend
+image: ${EASYPANEL_DOCKERFILE_IMAGE}
+env:
+  - name: NODE_ENV
+    value: production
+  - name: STORE_CORS
+    value: ${STORE_CORS}
+  - name: ADMIN_CORS
+    value: ${ADMIN_CORS}
+  - name: AUTH_CORS
+    value: ${AUTH_CORS}
+  - name: REDIS_URL
+    value: ${REDIS_URL}
+  - name: JWT_SECRET
+    value: ${JWT_SECRET}
+  - name: COOKIE_SECRET
+    value: ${COOKIE_SECRET}
+  - name: DATABASE_URL
+    value: ${DATABASE_URL}
+  - name: DB_NAME
+    value: ${DB_NAME}
+  - name: OPENAI_API_KEY
+    value: ${OPENAI_API_KEY}
+  - name: AUTO_GENERATE_DESCRIPTIONS
+    value: ${AUTO_GENERATE_DESCRIPTIONS}
+  - name: SMTP_HOST
+    value: ${SMTP_HOST}
+  - name: SMTP_PORT
+    value: ${SMTP_PORT}
+  - name: SMTP_USER
+    value: ${SMTP_USER}
+  - name: SMTP_PASS
+    value: ${SMTP_PASS}
+  - name: SMTP_FROM
+    value: ${SMTP_FROM}
+  - name: ADMIN_URL
+    value: ${ADMIN_URL}
+ports:
+  - port: 9000
+    protocol: http
+    public: true
+    path: /
+    secure: true
+resources:
+  cpu: 1
+  memory: 1024
+dockerfile: Dockerfile 
