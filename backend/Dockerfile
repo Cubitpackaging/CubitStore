@@ -17,8 +17,10 @@ RUN yarn install
 # Copy the rest of the application code
 COPY . .
 
-# Build the application
+# Build the application with admin panel
 RUN yarn build
+RUN mkdir -p /app/.medusa/admin
+RUN cp -r /app/node_modules/@medusajs/admin-ui/dist/* /app/.medusa/admin/
 
 # Expose the port the app runs on
 EXPOSE 9000
