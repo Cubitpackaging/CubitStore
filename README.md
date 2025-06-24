@@ -1,249 +1,207 @@
 <h1 align="center">
-  🏪 CubitStore
+  <a href="http://www.amitmerchant.com/electron-markdownify"><img src="https://github.com/user-attachments/assets/38ba3a7b-e07b-4117-8187-7b171eae3769" alt="B2B Commerce Starter" width="80" height="80"></a>
   <br>
   <br>
-  Modern B2B Commerce Platform
+  Medusa B2B Commerce Starter
+  <br>
 </h1>
 
-<p align="center">A powerful B2B ecommerce solution built for modern businesses</p>
+<p align="center">Customizable B2B ecommerce built with <a href="https://medusajs.com/" target="_blank">Medusa 2.0</a> & Next.js Storefront</p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Node.js-20+-green.svg" alt="Node.js" />
-  <img src="https://img.shields.io/badge/PostgreSQL-15+-blue.svg" alt="PostgreSQL" />
-  <img src="https://img.shields.io/badge/Next.js-15+-black.svg" alt="Next.js" />
-  <img src="https://img.shields.io/badge/TypeScript-5+-blue.svg" alt="TypeScript" />
+  <a href="https://github.com/medusajs/medusa/blob/master/CONTRIBUTING.md">
+    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat" alt="PRs welcome!" />
+  </a>
+    
+  <a href="https://discord.gg/xpCwq3Kfn8">
+    <img src="https://img.shields.io/badge/chat-on%20discord-7289DA.svg" alt="Discord Chat" />
+  </a>
+
+  <a href="https://twitter.com/intent/follow?screen_name=medusajs">
+    <img src="https://img.shields.io/twitter/follow/medusajs.svg?label=Follow%20@medusajs" alt="Follow @medusajs" />
+  </a>
+</p>
+
+<p align="center">
+  <video src="https://github.com/user-attachments/assets/833b26a5-4b52-447f-ac30-6ae02cbe8f05" controls="controls" muted="muted" playsinline="playsinline">
+</video>
 </p>
 
 <br>
 
-## 📋 Table of Contents
+## Table
 
-- [Prerequisites](#-prerequisites)
-- [Project Structure](#-project-structure)
-- [Features](#-features)
-- [Quick Start](#-quick-start)
-- [Deployment](#-deployment)
-- [Development](#-development)
-- [Environment Setup](#-environment-setup)
-
-&nbsp;
-
-## 🔧 Prerequisites
-
-- ✅ Node.js 20+
-- ✅ PostgreSQL 15+
-- ✅ Redis (optional but recommended)
-- ✅ Git
+- [Prerequisites](#prerequisites)
+- [Overview](#overview)
+  - [Features](#features)
+  - [Demo](#demo)
+- [Quickstart](#quickstart)
+- [Update](#update)
+- [Resources](#resources)
+- [Contributors](#contributors)
 
 &nbsp;
 
-## 📁 Project Structure
+## Prerequisites
 
-```
-CubitStore/
-├── backend/          # API & Admin Backend
-│   ├── src/          # Source code
-│   ├── Dockerfile    # Docker configuration
-│   └── package.json  # Backend dependencies
-├── storefront/       # Next.js Frontend
-│   ├── src/          # Frontend source
-│   └── package.json  # Frontend dependencies
-└── README.md         # This file
-```
+⚠️ We have tested this repo with the below versions:
+
+- ✅ Node 20
+- ✅ Postgres 15
+- ✅ Medusa 2.4
+- ✅ Next.js 15
 
 &nbsp;
 
-## ✨ Features
+## Overview
+For a full feature overview, please visit [the project wiki](https://github.com/medusajs/b2b-starter-medusa/wiki).
 
-### 🏢 **Company Management**
-- Multi-company support
-- Employee invitation system
-- Role-based access control
-- Company-specific settings
+#### Core features
 
-### 💰 **Advanced Commerce**
-- Bulk product ordering
-- Quote management system
-- Approval workflows
-- Spending limits
-- Dynamic pricing
-
-### 🔄 **Approval System**
-- Company-level approvals
-- Merchant approval processes
-- Multi-level authorization
-- Automated notifications
-
-### 🛒 **Enhanced Shopping**
-- Bulk add-to-cart functionality
-- Free shipping progress indicator
-- Promotional code system
-- Order management
-
-### 📱 **Modern Frontend**
-- Responsive design
-- Server-side rendering
-- Real-time updates
-- Mobile-optimized
+- **Company Management**. Customers can manage their company and invite employees.
+- **Spending Limits**. Company admins can assign spending limits to its employees.
+- **Bulk add-to-cart**. Customers can add multiple variants of a product to their cart at once.
+- **Quote Management**. Customers & Merchants can communicate, accept or reject quotes.
+- **Order Edit**. Merchants can edit orders or quotes - add/remove item, update quantity & price management and more.
+- **Company Approvals**. Companies can mandate approvals from company admins before employees can finalize a cart.
+- **Merchant Approvals**. Merchants can set up approval processes for orders, ensuring compliance with business rules before fulfillment.
+- **Promotions**. Customers can apply manual and automatic promotions to their cart.
+- **Free Shipping Nudge**. Displays a component showing progress toward free shipping.
+- **Full ecommerce support**
+  - Product Pages
+  - Product Collections & Categories
+  - Cart & Checkout
+  - User Accounts
+  - Order Details
+- **Full Next.js 15 support**
+  - App Router
+  - Caching
+  - Server components/actions
+  - Streaming
+  - Static Pre-Rendering
 
 &nbsp;
 
-## 🚀 Quick Start
+#### Demo
 
-### Backend Setup
+#### Quote Management
+
+<img align="right" src="https://github.com/user-attachments/assets/110c99e8-18ba-49e5-8955-84a058b597c7" alt="image" style=: />
+&nbsp;
+
+#### Company Management
+
+<img align="right" src="https://github.com/user-attachments/assets/361702ce-d491-4509-a930-4361ab3b4126" alt="image" style=: />
+&nbsp;
+
+#### Approval Management
+
+<img align="right" src="https://github.com/user-attachments/assets/b93b7b94-41a9-4c5f-bd6b-abf87492ed46" alt="image" style=: />
+&nbsp;
+
+#### Product Page
+
+<img align="right" src="https://github.com/user-attachments/assets/2cd8a3ff-5999-49af-890a-4bac7b6f2f15" alt="image" style=: />
+&nbsp;
+
+#### Cart Summary
+
+<img align="right" src="https://github.com/user-attachments/assets/095f5565-992e-4c74-acdc-a44bd905e59b" alt="image" style=: />
+&nbsp;
+
+&nbsp;
+
+## Quickstart
+
+#### Setup Medusa project
 
 ```bash
-# Navigate to backend
-cd backend
+# Clone the repository
+git clone https://github.com/medusajs/b2b-starter-medusa.git
+
+## Setup Backend
+
+# Go to the folder
+cd ./backend
+
+# Clone .env.template
+cp .env.template .env
 
 # Install dependencies
 yarn install
 
-# Setup environment
-cp .env.template .env
+# Install dependencies, setup database & seed data
+yarn install && yarn medusa db:create && yarn medusa db:migrate && yarn run seed && yarn medusa user -e admin@test.com -p supersecret -i admin
 
-# Configure your database URL in .env file
-# DATABASE_URL=postgresql://username:password@localhost:5432/cubitstore
-
-# Run migrations and seed data
-yarn build
-yarn medusa db:create
-yarn medusa db:migrate
-yarn run seed
-
-# Create admin user
-yarn medusa user -e admin@cubitpackaging.com -p admin123 -i admin
-
-# Start backend server
+# Start Medusa project - backend & admin
 yarn dev
-```
 
-### Storefront Setup
+## Setup Storefront
 
-```bash
-# Navigate to storefront
-cd storefront
+# Go to folder
+cd ../storefront
+
+# Clone .env.template
+cp .env.template .env
 
 # Install dependencies
 yarn install
+```
 
-# Setup environment
-cp .env.template .env
+#### Setup publishable key
 
-# Configure your backend URL in .env file
-# NEXT_PUBLIC_MEDUSA_BACKEND_URL=http://localhost:9000
+- ✅ Visit [Admin: Publishable Key](http://localhost:9000/app/settings/publishable-api-keys)
+  - <b>Credentials</b>:
+    - <b>email</b>: `admin@test.com`
+    - <b>password</b>: `supersecret`
+- ✅ Copy token key of "Webshop"
+- ✅ Open file - `storefront/.env`
+- ✅ Add token to this var - `NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY`
 
-# Start development server
+```
+# Start Medusa storefront
 yarn dev
 ```
 
-### Access Your Application
+Visit the following links to see the Medusa storefront & admin
 
-- **Backend API**: http://localhost:9000
-- **Admin Dashboard**: http://localhost:9000/app
-- **Storefront**: http://localhost:8000
-
-**Default Admin Credentials**:
-- Email: `admin@cubitpackaging.com`
-- Password: `admin123`
+- [Medusa Admin](http://localhost:9000/app)
+- [Medusa Storefront](http://localhost:8000)
 
 &nbsp;
 
-## 🌐 Deployment
+# Update
 
-### Using Docker (Recommended)
+Some general guidelines for when you're updating this Starter to a newer version.
 
-```bash
-# Build and deploy backend
-cd backend
-docker build -t cubitstore-backend .
-docker run -p 9000:9000 cubitstore-backend
-```
+## Update packages
 
-### Using EasyPanel
+Run `yarn install` in both projects to update you're packages to the latest versions.
 
-1. **Connect Repository**: Link your GitHub repository
-2. **Select Root Directory**: `/backend`
-3. **Configure Environment Variables**:
-   ```env
-   DATABASE_URL=your_postgresql_url
-   REDIS_URL=your_redis_url
-   JWT_SECRET=your_secret_key
-   COOKIE_SECRET=your_cookie_secret
-   ```
-4. **Deploy**: EasyPanel will handle the rest!
+## Run migrations
 
-&nbsp;
+To reflect any changes made to data models, make sure to run `npx medusa db:migrate` in the backend project.
 
-## 💻 Development
+> Note: are you updating from a version of this Starter that didn't have the Approval module yet? Run `npx medusa exec src/scripts/create-approval-settings.ts` in the backend project to add approval settings to all existing companies.
 
-### Available Scripts
+# Resources
 
-**Backend**:
-- `yarn dev` - Start development server
-- `yarn build` - Build for production
-- `yarn start` - Start production server
-- `yarn seed` - Seed database with sample data
+#### Learn more about Medusa
 
-**Storefront**:
-- `yarn dev` - Start development server
-- `yarn build` - Build for production
-- `yarn start` - Start production server
+- [Website](https://www.medusajs.com/)
+- [GitHub](https://github.com/medusajs)
+- [2.0 Documentation](https://docs.medusajs.com/v2)
 
-### Code Structure
+#### Learn more about Next.js
 
-- **Backend**: Built with Medusa.js framework
-- **Frontend**: Next.js 15 with App Router
-- **Database**: PostgreSQL with Mikro-ORM
-- **Styling**: Tailwind CSS
-- **TypeScript**: Fully typed codebase
+- [Website](https://nextjs.org/)
+- [GitHub](https://github.com/vercel/next.js)
+- [Documentation](https://nextjs.org/docs)
 
 &nbsp;
 
-## ⚙️ Environment Setup
+## Contributors
 
-### Backend Environment Variables
-
-```env
-# Database
-DATABASE_URL=postgresql://user:password@localhost:5432/cubitstore
-DB_NAME=cubitstore
-
-# Redis (optional)
-REDIS_URL=redis://localhost:6379
-
-# Security
-JWT_SECRET=your-super-secret-jwt-key
-COOKIE_SECRET=your-super-secret-cookie-key
-
-# CORS
-STORE_CORS=http://localhost:8000
-ADMIN_CORS=http://localhost:7000,http://localhost:7001
-
-# Port
-PORT=9000
-```
-
-### Storefront Environment Variables
-
-```env
-# Backend API
-NEXT_PUBLIC_MEDUSA_BACKEND_URL=http://localhost:9000
-NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY=your_publishable_key
-
-# Base URL
-NEXT_PUBLIC_BASE_URL=http://localhost:8000
-```
-
-&nbsp;
-
-## 📞 Support
-
-For issues and questions:
-- Check the documentation
-- Review environment setup
-- Ensure all services are running
-
----
-
-**CubitStore** - Built for modern B2B commerce 🚀
+<a href = "https://github.com/medusajs/b2b-starter-medusa/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=medusajs/b2b-starter-medusa"/>
+</a>
