@@ -17,7 +17,7 @@ RUN yarn install
 # Copy the rest of the application code
 COPY . .
 
-# Build the application with admin panel
+# Build the application (API only, no admin)
 RUN yarn build
 
 # Expose the port the app runs on
@@ -33,8 +33,7 @@ ENV AUTH_CORS=*
 ENV JWT_SECRET=supersecret
 ENV COOKIE_SECRET=supersecret
 ENV MEDUSA_WORKER_MODE=server
-ENV DISABLE_MEDUSA_ADMIN=false
-ENV MEDUSA_BACKEND_URL=http://localhost:9000
+ENV DISABLE_MEDUSA_ADMIN=true
 
 # Start the application with migrations
 CMD yarn predeploy && yarn start 
