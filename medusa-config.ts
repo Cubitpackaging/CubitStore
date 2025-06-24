@@ -22,10 +22,28 @@ module.exports = defineConfig({
     },
   },
   admin: {
-    // Admin configuration will be added here as needed
+    path: "/app",
+    baseUrl: process.env.ADMIN_URL || undefined,
   },
   plugins: [
-    // Plugins will be added here as needed
+    {
+      resolve: "@medusajs/admin-sdk",
+      options: {
+        autoRebuild: process.env.NODE_ENV !== "production",
+      },
+    },
+    {
+      resolve: "@medusajs/email-smtp",
+      options: {
+        host: process.env.SMTP_HOST,
+        port: process.env.SMTP_PORT,
+        auth: {
+          user: process.env.SMTP_USER,
+          pass: process.env.SMTP_PASS,
+        },
+        from: process.env.SMTP_FROM,
+      },
+    },
   ],
   modules: {
     [COMPANY_MODULE]: {
@@ -45,14 +63,6 @@ module.exports = defineConfig({
     },
     [Modules.WORKFLOW_ENGINE]: {
       resolve: "@medusajs/medusa/workflow-engine-inmemory",
-    },
-    [Modules.STOCK_LOCATION]: {
-      resolve: "@medusajs/stock-location",
-      options: {
-        database: {
-          clientUrl: process.env.DATABASE_URL,
-        }
-      },
     },
   },
 });

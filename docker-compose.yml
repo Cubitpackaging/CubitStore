@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: medusa-backend
+    ports:
+      - "9000:9000"
+    environment:
+      NODE_ENV: production
+      STORE_CORS: ${STORE_CORS}
+      ADMIN_CORS: ${ADMIN_CORS}
+      AUTH_CORS: ${AUTH_CORS}
+      REDIS_URL: ${REDIS_URL}
+      JWT_SECRET: ${JWT_SECRET}
+      COOKIE_SECRET: ${COOKIE_SECRET}
+      DATABASE_URL: ${DATABASE_URL}
+      DB_NAME: ${DB_NAME}
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      AUTO_GENERATE_DESCRIPTIONS: ${AUTO_GENERATE_DESCRIPTIONS}
+      SMTP_HOST: ${SMTP_HOST}
+      SMTP_PORT: ${SMTP_PORT}
+      SMTP_USER: ${SMTP_USER}
+      SMTP_PASS: ${SMTP_PASS}
+      SMTP_FROM: ${SMTP_FROM}
+      ADMIN_URL: ${ADMIN_URL}
+    restart: unless-stopped 
