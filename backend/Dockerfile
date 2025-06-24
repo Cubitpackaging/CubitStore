@@ -4,12 +4,15 @@ FROM node:20-alpine
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy package.json and yarn.lock
-COPY package*.json yarn.lock ./
+# Copy package.json, yarn.lock, and .yarnrc.yml
+COPY package*.json yarn.lock .yarnrc.yml ./
+
+# Enable corepack and prepare yarn
+RUN corepack enable && corepack prepare yarn@4.4.0 --activate
 
 # Install dependencies
-RUN corepack enable && corepack prepare yarn@4.4.0 --activate
-RUN yarn install --frozen-lockfile
+# Note: .yarnrc.yml already has nodeLinker: node-modules
+RUN yarn install
 
 # Copy the rest of the application code
 COPY . .
