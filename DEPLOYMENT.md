@@ -174,7 +174,7 @@ server {
 ### 5. Setup Domains in EasyPanel
 
 1. In EasyPanel, go to your project settings
-2. Add your domains `admin.cubitpackaging.com` and `cubitpackaging.com` and enable HTTPS
+2. Add your domain `admin.cubitpackaging.com` and enable HTTPS
 3. EasyPanel will handle the SSL certificates with Let's Encrypt
 
 ### 6. Database Migrations
