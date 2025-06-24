@@ -3,8 +3,6 @@ image: ${EASYPANEL_DOCKERFILE_IMAGE}
 domains:
   - domain: admin.cubitpackaging.com
     path: /
-  - domain: api.cubitpackaging.com
-    path: /
 env:
   - name: NODE_ENV
     value: production
