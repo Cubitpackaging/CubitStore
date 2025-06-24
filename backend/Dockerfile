@@ -36,8 +36,5 @@ ENV MEDUSA_WORKER_MODE=server
 ENV DISABLE_MEDUSA_ADMIN=false
 ENV MEDUSA_BACKEND_URL=http://localhost:9000
 
-# Run migrations before starting
-RUN cd .medusa/server && yarn medusa db:migrate
-
-# Start the application
-CMD ["yarn", "start"] 
+# Start the application with migrations
+CMD yarn predeploy && yarn start 
