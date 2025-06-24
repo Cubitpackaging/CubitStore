@@ -29,11 +29,17 @@ EXPOSE 9000
 ENV NODE_ENV=production
 ENV DATABASE_URL=postgres://postgres:postgres@postgres:5432/medusa
 ENV REDIS_URL=redis://redis:6379
-ENV STORE_CORS=http://localhost:8000
-ENV ADMIN_CORS=http://localhost:7000
-ENV AUTH_CORS=http://localhost:7000
+ENV STORE_CORS=*
+ENV ADMIN_CORS=*
+ENV AUTH_CORS=*
 ENV JWT_SECRET=supersecret
 ENV COOKIE_SECRET=supersecret
+ENV MEDUSA_WORKER_MODE=server
+ENV DISABLE_MEDUSA_ADMIN=false
+ENV MEDUSA_BACKEND_URL=http://localhost:9000
+
+# Run migrations before starting
+RUN cd .medusa/server && yarn medusa db:migrate
 
 # Start the application
 CMD ["yarn", "start"] 
