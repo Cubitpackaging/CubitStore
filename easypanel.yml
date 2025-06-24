@@ -1,5 +1,8 @@
 name: cubit-store-backend
 image: ${EASYPANEL_DOCKERFILE_IMAGE}
+domains:
+  - domain: admin.cubitpackaging.com
+    path: /
 env:
   - name: NODE_ENV
     value: production
@@ -34,7 +37,7 @@ env:
   - name: SMTP_FROM
     value: ${SMTP_FROM}
   - name: ADMIN_URL
-    value: ${ADMIN_URL}
+    value: https://admin.cubitpackaging.com/app
 ports:
   - port: 9000
     protocol: http

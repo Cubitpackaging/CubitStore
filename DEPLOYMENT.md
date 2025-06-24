@@ -63,12 +63,12 @@ ADMIN_URL=https://your-domain.com/app
 
 ### 4. Configure Nginx for Custom Admin URL
 
-To make the admin panel accessible at `/app` instead of `:9000/app`, you'll need to configure Nginx as a reverse proxy:
+To make the admin panel accessible at admin.cubitpackaging.com, you'll need to configure Nginx as a reverse proxy:
 
 ```nginx
 server {
     listen 80;
-    server_name your-domain.com;
+    server_name admin.cubitpackaging.com;
 
     # Redirect HTTP to HTTPS
     return 301 https://$host$request_uri;
@@ -76,7 +76,7 @@ server {
 
 server {
     listen 443 ssl;
-    server_name your-domain.com;
+    server_name admin.cubitpackaging.com;
 
     # SSL configuration
     ssl_certificate /path/to/certificate.crt;
@@ -125,7 +125,7 @@ server {
 ### 5. Setup Domain in EasyPanel
 
 1. In EasyPanel, go to your project settings
-2. Add your domain and enable HTTPS
+2. Add your domain `admin.cubitpackaging.com` and enable HTTPS
 3. EasyPanel will handle the SSL certificate with Let's Encrypt
 
 ### 6. Database Migrations
