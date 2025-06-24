@@ -12,6 +12,14 @@ export default defineMiddlewares({
     ...adminMiddlewares,
     ...storeMiddlewares,
     {
+      matcher: "/",
+      middlewares: [
+        (req: MedusaRequest, res: MedusaResponse) => {
+          res.status(200).json({ status: "ok", message: "CubitStore API is running" });
+        },
+      ],
+    },
+    {
       matcher: "/store/customers/me",
       middlewares: [
         (req: MedusaRequest, res: MedusaResponse, next: MedusaNextFunction) => {
