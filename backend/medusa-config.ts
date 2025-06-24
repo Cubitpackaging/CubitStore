@@ -51,6 +51,11 @@ module.exports = defineConfig({
       options: {
         database: {
           clientUrl: process.env.DATABASE_URL,
+          driverOptions: {
+            connection: {
+              ssl: false
+            }
+          }
         }
       },
     },
