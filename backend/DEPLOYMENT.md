@@ -6,8 +6,8 @@ This guide explains how to deploy the CubitStore backend using EasyPanel and Doc
 
 - EasyPanel installed on your server
 - Git repository access
-- PostgreSQL database (external)
-- Redis instance (external)
+- PostgreSQL database (already configured at 162.243.164.194)
+- Redis instance (already configured at 162.243.164.194)
 
 ## Deployment Steps with EasyPanel
 
@@ -32,22 +32,22 @@ Edit the file with your actual values:
 STORE_CORS=https://cubitpackaging.com
 ADMIN_CORS=https://admin.cubitpackaging.com
 AUTH_CORS=https://admin.cubitpackaging.com
-REDIS_URL=redis://default:password@your-redis-host:6379
-JWT_SECRET=your-jwt-secret
-COOKIE_SECRET=your-cookie-secret
-DATABASE_URL=postgres://postgres:password@your-postgres-host:5432/your-db-name?sslmode=disable
-DB_NAME=your-db-name
+REDIS_URL=redis://default:Hamza%406244@162.243.164.194:6379
+JWT_SECRET=supersecret
+COOKIE_SECRET=supersecret
+DATABASE_URL=postgres://postgres:Hamza%406244@162.243.164.194:5432/cubitstore?sslmode=disable
+DB_NAME=cubitstore
 OPENAI_API_KEY=your-openai-api-key-here
 AUTO_GENERATE_DESCRIPTIONS=false
 
 # Email settings
-SMTP_HOST=your-smtp-host
+SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
-SMTP_USER=your-smtp-user
-SMTP_PASS=your-smtp-password
-SMTP_FROM=your-from-email@example.com
+SMTP_USER=your-email@gmail.com
+SMTP_PASS=your-app-password
+SMTP_FROM=your-email@gmail.com
 
-# Base URL for admin panel - Change this to your domain
+# Base URL for admin panel
 ADMIN_URL=https://admin.cubitpackaging.com/app
 ```
 
@@ -58,7 +58,11 @@ ADMIN_URL=https://admin.cubitpackaging.com/app
 3. Enter your Git repository URL: `https://github.com/Cubitpackaging/CubitStore.git`
 4. Select the branch (usually `main`)
 5. Choose the directory containing the `easypanel.yml` file (`backend` folder)
-6. Configure environment variables in EasyPanel UI, using values from your `.env.production` file
+6. Configure the remaining environment variables in EasyPanel UI:
+   - `OPENAI_API_KEY`: Your OpenAI API key
+   - `SMTP_USER`: Your email address for sending emails
+   - `SMTP_PASS`: Your email app password
+   - `SMTP_FROM`: Your sender email address
 7. Click "Deploy"
 
 ### 4. Configure Nginx for Custom Domains

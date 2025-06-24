@@ -15,23 +15,23 @@ env:
   - name: AUTH_CORS
     value: https://admin.cubitpackaging.com
   - name: REDIS_URL
-    value: ${REDIS_URL}
+    value: redis://default:Hamza%406244@162.243.164.194:6379
   - name: JWT_SECRET
-    value: ${JWT_SECRET}
+    value: supersecret
   - name: COOKIE_SECRET
-    value: ${COOKIE_SECRET}
+    value: supersecret
   - name: DATABASE_URL
-    value: ${DATABASE_URL}
+    value: postgres://postgres:Hamza%406244@162.243.164.194:5432/cubitstore?sslmode=disable
   - name: DB_NAME
-    value: ${DB_NAME}
+    value: cubitstore
   - name: OPENAI_API_KEY
     value: ${OPENAI_API_KEY}
   - name: AUTO_GENERATE_DESCRIPTIONS
-    value: ${AUTO_GENERATE_DESCRIPTIONS}
+    value: false
   - name: SMTP_HOST
-    value: ${SMTP_HOST}
+    value: smtp.gmail.com
   - name: SMTP_PORT
-    value: ${SMTP_PORT}
+    value: 587
   - name: SMTP_USER
     value: ${SMTP_USER}
   - name: SMTP_PASS
