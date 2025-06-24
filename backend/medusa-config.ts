@@ -46,5 +46,13 @@ module.exports = defineConfig({
     [Modules.WORKFLOW_ENGINE]: {
       resolve: "@medusajs/medusa/workflow-engine-inmemory",
     },
+    [Modules.STOCK_LOCATION]: {
+      resolve: "@medusajs/stock-location",
+      options: {
+        database: {
+          clientUrl: process.env.DATABASE_URL,
+        }
+      },
+    },
   },
 });
