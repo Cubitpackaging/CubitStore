@@ -3,15 +3,17 @@ image: ${EASYPANEL_DOCKERFILE_IMAGE}
 domains:
   - domain: admin.cubitpackaging.com
     path: /
+  - domain: api.cubitpackaging.com
+    path: /
 env:
   - name: NODE_ENV
     value: production
   - name: STORE_CORS
-    value: ${STORE_CORS}
+    value: https://cubitpackaging.com
   - name: ADMIN_CORS
-    value: ${ADMIN_CORS}
+    value: https://admin.cubitpackaging.com
   - name: AUTH_CORS
-    value: ${AUTH_CORS}
+    value: https://admin.cubitpackaging.com
   - name: REDIS_URL
     value: ${REDIS_URL}
   - name: JWT_SECRET
