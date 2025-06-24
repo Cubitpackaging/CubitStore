@@ -14,8 +14,8 @@ This guide explains how to deploy the CubitStore backend using EasyPanel and Doc
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/StoreCubit.git
-cd StoreCubit/backend
+git clone https://github.com/Cubitpackaging/CubitStore.git
+cd CubitStore/backend
 ```
 
 ### 2. Configure Environment Variables
@@ -29,9 +29,9 @@ cp .env.production.template .env.production
 Edit the file with your actual values:
 
 ```
-STORE_CORS=https://your-storefront-domain.com
-ADMIN_CORS=https://your-admin-domain.com
-AUTH_CORS=https://your-admin-domain.com
+STORE_CORS=https://cubitpackaging.com
+ADMIN_CORS=https://admin.cubitpackaging.com
+AUTH_CORS=https://admin.cubitpackaging.com
 REDIS_URL=redis://default:password@your-redis-host:6379
 JWT_SECRET=your-jwt-secret
 COOKIE_SECRET=your-cookie-secret
@@ -48,20 +48,22 @@ SMTP_PASS=your-smtp-password
 SMTP_FROM=your-from-email@example.com
 
 # Base URL for admin panel - Change this to your domain
-ADMIN_URL=https://your-domain.com/app
+ADMIN_URL=https://admin.cubitpackaging.com/app
 ```
 
 ### 3. Deploy with EasyPanel
 
 1. In EasyPanel, go to "Projects" and click "Create Project"
 2. Choose "Import from Git"
-3. Enter your Git repository URL
-4. Select the branch (usually `main` or `master`)
-5. Choose the directory containing the `easypanel.yml` file (backend folder)
+3. Enter your Git repository URL: `https://github.com/Cubitpackaging/CubitStore.git`
+4. Select the branch (usually `main`)
+5. Choose the directory containing the `easypanel.yml` file (`backend` folder)
 6. Configure environment variables in EasyPanel UI, using values from your `.env.production` file
 7. Click "Deploy"
 
-### 4. Configure Nginx for Custom Admin URL
+### 4. Configure Nginx for Custom Domains
+
+#### Admin Panel Configuration (admin.cubitpackaging.com)
 
 To make the admin panel accessible at admin.cubitpackaging.com, you'll need to configure Nginx as a reverse proxy:
 
@@ -122,11 +124,54 @@ server {
 }
 ```
 
-### 5. Setup Domain in EasyPanel
+#### Storefront Configuration (cubitpackaging.com)
+
+For the storefront at cubitpackaging.com, configure Nginx:
+
+```nginx
+server {
+    listen 80;
+    server_name cubitpackaging.com www.cubitpackaging.com;
+
+    # Redirect HTTP to HTTPS
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name cubitpackaging.com www.cubitpackaging.com;
+
+    # SSL configuration
+    ssl_certificate /path/to/certificate.crt;
+    ssl_certificate_key /path/to/private.key;
+
+    # Proxy to Next.js storefront
+    location / {
+        proxy_pass http://localhost:8000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+    # API endpoints (if storefront needs direct access)
+    location /store {
+        proxy_pass http://localhost:9000/store;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+```
+
+### 5. Setup Domains in EasyPanel
 
 1. In EasyPanel, go to your project settings
-2. Add your domain `admin.cubitpackaging.com` and enable HTTPS
-3. EasyPanel will handle the SSL certificate with Let's Encrypt
+2. Add your domains `admin.cubitpackaging.com` and `cubitpackaging.com` and enable HTTPS
+3. EasyPanel will handle the SSL certificates with Let's Encrypt
 
 ### 6. Database Migrations
 
