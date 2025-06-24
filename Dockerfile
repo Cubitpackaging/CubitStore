@@ -8,6 +8,7 @@ WORKDIR /app
 COPY package*.json yarn.lock ./
 
 # Install dependencies
+RUN corepack enable && corepack prepare yarn@4.4.0 --activate
 RUN yarn install --frozen-lockfile
 
 # Copy the rest of the application code
