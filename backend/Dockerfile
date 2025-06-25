@@ -11,8 +11,8 @@ RUN corepack enable && corepack prepare yarn@4.4.0 --activate
 # Copy all application files
 COPY . .
 
-# Copy the Docker-specific .env file
-COPY .env.docker .env
+# Create a symbolic link for the admin public directory
+RUN mkdir -p .medusa/server/public
 
 # Install dependencies and build with admin UI
 RUN yarn install --network-timeout 600000 && \
