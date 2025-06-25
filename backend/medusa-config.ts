@@ -31,7 +31,7 @@ module.exports = defineConfig({
     {
       resolve: "@medusajs/admin-sdk",
       options: {
-        autoRebuild: process.env.NODE_ENV !== "production",
+        autoRebuild: true,
       },
     },
   ],

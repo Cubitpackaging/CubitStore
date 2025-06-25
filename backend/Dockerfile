@@ -16,8 +16,7 @@ COPY .env.docker .env
 
 # Install dependencies and build with admin UI
 RUN yarn install --network-timeout 600000 && \
-    yarn build && \
-    yarn medusa admin build
+    yarn build:admin
 
 # Expose port
 EXPOSE 9000
