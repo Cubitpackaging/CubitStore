@@ -8,16 +8,10 @@ RUN apk add --no-cache python3 make g++ postgresql-dev
 # Enable Corepack and use the correct Yarn version
 RUN corepack enable && corepack prepare yarn@4.4.0 --activate
 
-# Copy package files first for better caching
-COPY package.json yarn.lock ./
-
-# First install only production dependencies
-RUN yarn install --network-timeout 600000 --immutable
-
-# Copy the rest of the application
+# Copy all application files
 COPY . .
 
-# Install all dependencies (including dev dependencies) and build
+# Install dependencies and build
 RUN yarn install --network-timeout 600000 && yarn build
 
 # Expose port
