@@ -27,15 +27,15 @@ env:
   - name: AUTO_GENERATE_DESCRIPTIONS
     value: false
   - name: SMTP_HOST
-    value: smtp.gmail.com
+    value: smtp.hostinger.com
   - name: SMTP_PORT
-    value: 587
+    value: 465
   - name: SMTP_USER
-    value: ${SMTP_USER}
+    value: info@cubitpackaging.com
   - name: SMTP_PASS
     value: ${SMTP_PASS}
   - name: SMTP_FROM
-    value: ${SMTP_FROM}
+    value: info@cubitpackaging.com
   - name: ADMIN_URL
     value: https://admin.cubitpackaging.com/app
 ports:

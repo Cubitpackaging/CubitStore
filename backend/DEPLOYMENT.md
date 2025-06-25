@@ -41,11 +41,11 @@ OPENAI_API_KEY=your-openai-api-key-here
 AUTO_GENERATE_DESCRIPTIONS=false
 
 # Email settings
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_USER=your-email@gmail.com
-SMTP_PASS=your-app-password
-SMTP_FROM=your-email@gmail.com
+SMTP_HOST=smtp.hostinger.com
+SMTP_PORT=465
+SMTP_USER=info@cubitpackaging.com
+SMTP_PASS=your-email-password
+SMTP_FROM=info@cubitpackaging.com
 
 # Base URL for admin panel
 ADMIN_URL=https://admin.cubitpackaging.com/app
@@ -59,10 +59,8 @@ ADMIN_URL=https://admin.cubitpackaging.com/app
 4. Select the branch (usually `main`)
 5. Choose the directory containing the `easypanel.yml` file (`backend` folder)
 6. Configure the remaining environment variables in EasyPanel UI:
-   - `OPENAI_API_KEY`: Your OpenAI API key
-   - `SMTP_USER`: Your email address for sending emails
-   - `SMTP_PASS`: Your email app password
-   - `SMTP_FROM`: Your sender email address
+   - `OPENAI_API_KEY`: Your OpenAI API key (if you plan to use AI features)
+   - `SMTP_PASS`: Your Hostinger email password for info@cubitpackaging.com
 7. Click "Deploy"
 
 ### 4. Configure Nginx for Custom Domains
