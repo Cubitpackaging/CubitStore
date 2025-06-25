@@ -11,8 +11,10 @@ RUN corepack enable && corepack prepare yarn@4.4.0 --activate
 # Copy all application files
 COPY . .
 
-# Install dependencies and build
-RUN yarn install --network-timeout 600000 && yarn build
+# Install dependencies and build with explicit admin build
+RUN yarn install --network-timeout 600000 && \
+    yarn medusa build && \
+    yarn build
 
 # Expose port
 EXPOSE 9000
