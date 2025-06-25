@@ -11,9 +11,8 @@ RUN corepack enable && corepack prepare yarn@4.4.0 --activate
 # Copy all application files
 COPY . .
 
-# Install dependencies and build with explicit admin build
+# Install dependencies and build API only
 RUN yarn install --network-timeout 600000 && \
-    yarn medusa build && \
     yarn build
 
 # Expose port
@@ -22,5 +21,5 @@ EXPOSE 9000
 # Set environment variables
 ENV NODE_ENV=production
 
-# Start the application
-CMD ["yarn", "start"] 
+# Start the application in API-only mode
+CMD ["yarn", "medusa", "start"] 
