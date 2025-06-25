@@ -5,6 +5,9 @@ WORKDIR /app
 # Install dependencies needed for build
 RUN apk add --no-cache python3 make g++
 
+# Enable Corepack and use the correct Yarn version
+RUN corepack enable && corepack prepare yarn@4.4.0 --activate
+
 # Copy package.json and install dependencies
 COPY package.json ./
 COPY yarn.lock ./
