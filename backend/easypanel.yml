@@ -33,7 +33,7 @@ env:
   - name: SMTP_USER
     value: info@cubitpackaging.com
   - name: SMTP_PASS
-    value: ${SMTP_PASS}
+    value: H@mz@#53779
   - name: SMTP_FROM
     value: info@cubitpackaging.com
   - name: ADMIN_URL

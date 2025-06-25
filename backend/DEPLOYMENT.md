@@ -44,7 +44,7 @@ AUTO_GENERATE_DESCRIPTIONS=false
 SMTP_HOST=smtp.hostinger.com
 SMTP_PORT=465
 SMTP_USER=info@cubitpackaging.com
-SMTP_PASS=your-email-password
+SMTP_PASS=H@mz@#53779
 SMTP_FROM=info@cubitpackaging.com
 
 # Base URL for admin panel
@@ -58,9 +58,7 @@ ADMIN_URL=https://admin.cubitpackaging.com/app
 3. Enter your Git repository URL: `https://github.com/Cubitpackaging/CubitStore.git`
 4. Select the branch (usually `main`)
 5. Choose the directory containing the `easypanel.yml` file (`backend` folder)
-6. Configure the remaining environment variables in EasyPanel UI:
-   - `OPENAI_API_KEY`: Your OpenAI API key (if you plan to use AI features)
-   - `SMTP_PASS`: Your Hostinger email password for info@cubitpackaging.com
+6. Configure the OpenAI API key in EasyPanel UI (if you plan to use AI features)
 7. Click "Deploy"
 
 ### 4. Configure Nginx for Custom Domains
