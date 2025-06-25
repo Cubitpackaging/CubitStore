@@ -3,7 +3,7 @@ FROM node:20-alpine
 WORKDIR /app
 
 # Install dependencies needed for build
-RUN apk add --no-cache python3 make g++
+RUN apk add --no-cache python3 make g++ postgresql-dev
 
 # Enable Corepack and use the correct Yarn version
 RUN corepack enable && corepack prepare yarn@4.4.0 --activate
@@ -12,7 +12,8 @@ RUN corepack enable && corepack prepare yarn@4.4.0 --activate
 COPY package.json ./
 COPY yarn.lock ./
 
-RUN yarn install
+# Install dependencies with --network-timeout to avoid timeouts
+RUN yarn install --network-timeout 600000
 
 # Copy the rest of the application
 COPY . .
