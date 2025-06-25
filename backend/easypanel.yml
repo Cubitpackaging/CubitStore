@@ -11,7 +11,7 @@ env:
   - name: ADMIN_CORS
     value: https://admin.cubitpackaging.com
   - name: AUTH_CORS
-    value: https://admin.cubitpackaging.com
+    value: https://admin.cubitpackaging.com,https://cubitpackaging.com
   - name: REDIS_URL
     value: redis://default:Hamza%406244@162.243.164.194:6379
   - name: JWT_SECRET
@@ -38,6 +38,12 @@ env:
     value: info@cubitpackaging.com
   - name: ADMIN_URL
     value: https://admin.cubitpackaging.com/app
+  - name: MEDUSA_WORKER_MODE
+    value: server
+  - name: DISABLE_MEDUSA_ADMIN
+    value: false
+  - name: MEDUSA_BACKEND_URL
+    value: https://admin.cubitpackaging.com
 ports:
   - port: 9000
     protocol: http
