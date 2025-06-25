@@ -23,25 +23,12 @@ module.exports = defineConfig({
   },
   admin: {
     path: "/app",
-    baseUrl: process.env.ADMIN_URL || undefined,
   },
   plugins: [
     {
       resolve: "@medusajs/admin-sdk",
       options: {
         autoRebuild: process.env.NODE_ENV !== "production",
-      },
-    },
-    {
-      resolve: "@medusajs/email-smtp",
-      options: {
-        host: process.env.SMTP_HOST,
-        port: process.env.SMTP_PORT,
-        auth: {
-          user: process.env.SMTP_USER,
-          pass: process.env.SMTP_PASS,
-        },
-        from: process.env.SMTP_FROM,
       },
     },
   ],
