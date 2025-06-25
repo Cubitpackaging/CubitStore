@@ -44,7 +44,7 @@ AUTO_GENERATE_DESCRIPTIONS=false
 SMTP_HOST=smtp.hostinger.com
 SMTP_PORT=465
 SMTP_USER=info@cubitpackaging.com
-SMTP_PASS=H@m@#53779
+SMTP_PASS=H@mz@#53779
 SMTP_FROM=info@cubitpackaging.com
 
 # Base URL for admin panel
