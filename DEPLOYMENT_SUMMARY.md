@@ -3,7 +3,7 @@
 ## Quick Overview
 
 This repository contains a **Medusa B2B Commerce Starter** that needs to be deployed:
-- **Backend** → **Easypanel** (Medusa 2.8.4 with custom B2B modules)
+- **Backend** → **Coolify** (recommended) or **Easypanel** (Medusa 2.8.4 with custom B2B modules)
 - **Storefront** → **Vercel** (Next.js 15)
 
 ## What You Need
@@ -30,8 +30,11 @@ This repository contains a **Medusa B2B Commerce Starter** that needs to be depl
 
 ### Main Documentation
 - **`DEPLOYMENT_PLAN.md`** - Complete deployment guide with all details
+- **`COOLIFY_DEPLOYMENT.md`** - Complete Coolify deployment guide (recommended)
+- **`COOLIFY_QUICK_START.md`** - Quick 30-minute Coolify setup
 - **`EASYPANEL_DEPLOYMENT.md`** - Step-by-step Easypanel guide
 - **`VERCEL_DEPLOYMENT.md`** - Step-by-step Vercel guide
+- **`COOLIFY_VS_EASYPANEL_FRESH.md`** - Platform comparison
 
 ### Configuration Files
 - **`backend/easypanel.yml`** - Easypanel configuration
@@ -40,7 +43,45 @@ This repository contains a **Medusa B2B Commerce Starter** that needs to be depl
 
 ## Quick Start
 
-### 1. Backend to Easypanel
+### Choose Your Backend Platform
+
+**Recommended: Coolify** (self-hosted, $5-10/month, internal databases)
+- See: `COOLIFY_DEPLOYMENT.md` or `COOLIFY_QUICK_START.md`
+
+**Alternative: Easypanel** (managed, $10-50/month, external databases)
+- See: `EASYPANEL_DEPLOYMENT.md`
+
+### 1. Backend to Coolify (Recommended)
+
+1. **Get VPS Server** ($5-10/month)
+   - Hetzner, DigitalOcean, or Linode
+   - Ubuntu 22.04, 2 CPU, 4GB RAM minimum
+
+2. **Install Coolify**
+   ```bash
+   curl -fsSL https://cdn.coollabs.io/coolify/install.sh | bash
+   ```
+
+3. **Provision Databases in Coolify**
+   - PostgreSQL: One-click setup
+   - Redis: One-click setup
+   - Use internal service names in connection strings
+
+4. **Deploy Medusa Backend**
+   - Create Dockerfile application in Coolify
+   - Set environment variables (see `COOLIFY_DEPLOYMENT.md`)
+   - Configure domain and SSL
+   - Deploy
+
+5. **Post-Deploy**
+   - Run migrations
+   - Create admin user
+   - Get publishable API key
+
+**Full Guide**: `COOLIFY_DEPLOYMENT.md`  
+**Quick Start**: `COOLIFY_QUICK_START.md` (30 minutes)
+
+### Alternative: Backend to Easypanel
 
 1. **Create Easypanel Project**
    - Import from Git
@@ -48,8 +89,8 @@ This repository contains a **Medusa B2B Commerce Starter** that needs to be depl
    - Use `backend/easypanel.yml`
 
 2. **Set Environment Variables** (see `EASYPANEL_DEPLOYMENT.md` for full list)
-   - Database: `DATABASE_URL`, `DB_NAME`
-   - Redis: `REDIS_URL`
+   - Database: `DATABASE_URL`, `DB_NAME` (external)
+   - Redis: `REDIS_URL` (external)
    - Security: `JWT_SECRET`, `COOKIE_SECRET`
    - Admin: `ADMIN_URL`, `MEDUSA_BACKEND_URL`
    - Email: `SMTP_*` variables
@@ -93,11 +134,22 @@ This repository contains a **Medusa B2B Commerce Starter** that needs to be depl
 
 ## Environment Variables Checklist
 
+### Backend (Coolify) - 20+ variables
+See `COOLIFY_DEPLOYMENT.md` or `.env.coolify.template` for complete list.
+
+Key ones:
+- Database: Use internal service name `medusa-postgres:5432`
+- Redis: Use internal service name `medusa-redis:6379`
+- JWT & Cookie secrets (32+ characters)
+- Admin URLs
+- SMTP configuration
+- CORS settings
+
 ### Backend (Easypanel) - 20+ variables
 See `EASYPANEL_DEPLOYMENT.md` for complete list.
 
 Key ones:
-- Database & Redis connection strings
+- Database & Redis connection strings (external)
 - JWT & Cookie secrets
 - Admin URLs
 - SMTP configuration
