@@ -1,5 +1,4 @@
 import { HttpTypes } from "@medusajs/types"
-import { B2BCustomer } from "@/types/global"
 import ImageGallery from "@/modules/products/components/image-gallery"
 import ProductActions from "@/modules/products/components/product-actions"
 import ProductTabs from "@/modules/products/components/product-tabs"
@@ -15,14 +14,12 @@ type ProductTemplateProps = {
   product: HttpTypes.StoreProduct
   region: HttpTypes.StoreRegion
   countryCode: string
-  customer?: B2BCustomer | null
 }
 
 const ProductTemplate: React.FC<ProductTemplateProps> = ({
   product,
   region,
   countryCode,
-  customer,
 }) => {
   if (!product || !product.id) {
     return notFound()
