@@ -18,7 +18,6 @@ async function getRegionMap(cacheId: string) {
     regionMapUpdated < Date.now() - 3600 * 1000
   ) {
     // Fetch regions from Medusa. We can't use the JS client here because middleware is running on Edge and the client needs a Node environment.
-    // Fetch regions from Medusa. We can't use the JS client here because middleware is running on Edge and the client needs a Node environment.
     const { regions } = await fetch(`${BACKEND_URL}/store/regions`, {
       headers: {
         "x-publishable-api-key": PUBLISHABLE_API_KEY!,
@@ -66,32 +65,31 @@ async function getCountryCode(
   regionMap: Map<string, HttpTypes.StoreRegion | number>
 ) {
   try {
+    let countryCode
+
+    const vercelCountryCode = request.headers
+      .get("x-vercel-ip-country")
+      ?.toLowerCase()
+
     const urlCountryCode = request.nextUrl.pathname.split("/")[1]?.toLowerCase()
 
-    // Check if URL already has a valid country code, use it (for manual navigation)
     if (urlCountryCode && regionMap.has(urlCountryCode)) {
-      return urlCountryCode
-    } 
-    
-    // ALWAYS use the default region for new visitors - no country detection
-    if (regionMap.has(DEFAULT_REGION)) {
-      return DEFAULT_REGION
+      countryCode = urlCountryCode
+    } else if (vercelCountryCode && regionMap.has(vercelCountryCode)) {
+      countryCode = vercelCountryCode
+    } else if (regionMap.has(DEFAULT_REGION)) {
+      countryCode = DEFAULT_REGION
+    } else if (regionMap.keys().next().value) {
+      countryCode = regionMap.keys().next().value
     }
-    
-    // Fallback to first available region if default doesn't exist
-    const firstRegion = regionMap.keys().next().value
-    if (firstRegion) {
-      return firstRegion
-    }
-    
-    return null
+
+    return countryCode
   } catch (error) {
     if (process.env.NODE_ENV === "development") {
       console.error(
         "Middleware.ts: Error getting the country code. Did you set up regions in your Medusa Admin and define a NEXT_PUBLIC_MEDUSA_BACKEND_URL environment variable?"
       )
     }
-    return null
   }
 }
 
@@ -126,11 +124,10 @@ export async function middleware(request: NextRequest) {
 
   const regionMap = await getRegionMap(cacheId)
 
-  // Force default country code regardless of detection
   const countryCode = regionMap && (await getCountryCode(request, regionMap))
 
   const urlHasCountryCode =
-    countryCode && request.nextUrl.pathname.split("/")[1] === countryCode
+    countryCode && request.nextUrl.pathname.split("/")[1].includes(countryCode)
 
   // check if one of the country codes is in the url
   if (urlHasCountryCode && (!cartId || cartIdCookie) && cacheIdCookie) {
@@ -147,7 +144,7 @@ export async function middleware(request: NextRequest) {
 
   const queryString = request.nextUrl.search ? request.nextUrl.search : ""
 
-  // Always redirect to default region if no country code in URL
+  // If no country code is set, we redirect to the relevant region.
   if (!urlHasCountryCode && countryCode) {
     redirectUrl = `${request.nextUrl.origin}/${countryCode}${redirectPath}${queryString}`
     response = NextResponse.redirect(`${redirectUrl}`, 307)
