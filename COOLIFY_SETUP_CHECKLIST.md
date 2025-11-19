@@ -1,4 +1,6 @@
-# Coolify Setup Checklist
+# Coolify Setup Checklist - Step-by-Step
+
+**Use this checklist alongside `COOLIFY_COMPLETE_GUIDE.md` for detailed instructions.**
 
 ## Pre-Deployment
 
