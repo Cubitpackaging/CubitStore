@@ -840,7 +840,7 @@ Replace `YOUR_PASSWORD` with actual password
 2. **Key**: `STORE_CORS`
 3. **Value**: `https://your-storefront-domain.com`
    - Replace with your actual storefront domain
-   - Example: `https://cubitpackaging.com`
+   - Example: `https://e.cubitpackaging.com` (testing subdomain)
 4. **Click "Save"**
 
 #### Variable 3: ADMIN_CORS
@@ -849,7 +849,7 @@ Replace `YOUR_PASSWORD` with actual password
 2. **Key**: `ADMIN_CORS`
 3. **Value**: `https://admin.yourdomain.com`
    - Replace with your admin domain
-   - Example: `https://admin.cubitpackaging.com`
+   - Example: `https://admin.e.cubitpackaging.com` (testing subdomain)
 4. **Click "Save"**
 
 #### Variable 4: AUTH_CORS
@@ -858,7 +858,7 @@ Replace `YOUR_PASSWORD` with actual password
 2. **Key**: `AUTH_CORS`
 3. **Value**: `https://admin.yourdomain.com,https://your-storefront-domain.com`
    - Both domains, separated by comma
-   - Example: `https://admin.cubitpackaging.com,https://cubitpackaging.com`
+   - Example: `https://admin.e.cubitpackaging.com,https://e.cubitpackaging.com` (testing subdomains)
 4. **Click "Save"**
 
 #### Variable 5: DATABASE_URL
@@ -923,7 +923,7 @@ Replace `YOUR_PASSWORD` with actual password
 2. **Key**: `MEDUSA_BACKEND_URL`
 3. **Value**: `https://admin.yourdomain.com`
    - Base URL without `/app`
-   - Example: `https://admin.cubitpackaging.com`
+   - Example: `https://admin.e.cubitpackaging.com` (testing subdomain)
 4. **Click "Save"**
 
 #### Variable 12: MEDUSA_WORKER_MODE
@@ -1059,7 +1059,7 @@ Replace `YOUR_PASSWORD` with actual password
 2. **Domain input field:**
    - Type: `admin.yourdomain.com`
    - Replace with your actual domain
-   - Example: `admin.cubitpackaging.com`
+   - Example: `admin.e.cubitpackaging.com` (testing subdomain)
    - **Don't include** `http://` or `https://`
    - **Don't include** trailing slash
 
@@ -1262,7 +1262,7 @@ yarn medusa user -e admin@yourdomain.com -p yourpassword -i admin
 
 **Example:**
 ```bash
-yarn medusa user -e admin@cubitpackaging.com -p MySecurePass123! -i admin
+yarn medusa user -e admin@e.cubitpackaging.com -p MySecurePass123! -i admin
 ```
 
 **What happens:**

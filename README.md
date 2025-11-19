@@ -6,7 +6,7 @@
   <br>
 </h1>
 
-<p align="center">Powerful B2B ecommerce platform for <a href="https://cubitpackaging.com" target="_blank">Cubit Packaging</a> built with <a href="https://medusajs.com/" target="_blank">Medusa 2.0</a> & Next.js Storefront</p>
+<p align="center">B2B ecommerce platform for <a href="https://cubitpackaging.com" target="_blank">Cubit Packaging</a> - Eco-Smart Custom Packaging Solutions. Built with <a href="https://medusajs.com/" target="_blank">Medusa 2.0</a> & Next.js Storefront</p>
 
 <p align="center">
   <a href="https://github.com/medusajs/medusa/blob/master/CONTRIBUTING.md">
@@ -194,9 +194,9 @@ To reflect any changes made to data models, make sure to run `npx medusa db:migr
 
 #### Cubit Packaging
 
-- [Website](https://cubitpackaging.com)
-- [Storefront](https://cubitpackaging.com)
-- [Admin Panel](https://admin.cubitpackaging.com/app)
+- [Website](https://cubitpackaging.com) - Eco-Smart Custom Packaging Solutions
+- [B2B Storefront (Testing)](https://e.cubitpackaging.com) - Custom boxes, mailers & pouches
+- [Admin Panel (Testing)](https://admin.e.cubitpackaging.com/app) - Backend management
 
 #### Learn more about Next.js
 

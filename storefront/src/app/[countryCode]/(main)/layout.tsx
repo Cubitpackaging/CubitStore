@@ -30,12 +30,12 @@ export default async function PageLayout(props: { children: React.ReactNode }) {
         <div className="flex flex-col small:flex-row small:gap-2 gap-1 items-center">
           <span className="flex items-center gap-1">
             <ExclamationCircleSolid className="inline" color="#A1A1AA" />
-            Welcome to Cubit Packaging - Your B2B Packaging Solutions Partner
+            Cubit Packaging - Eco-Smart Custom Packaging Solutions
           </span>
 
           <a
             className="group hover:text-ui-fg-interactive-hover text-ui-fg-interactive self-end small:self-auto"
-            href="https://cubitpackaging.com"
+            href="https://e.cubitpackaging.com"
             target="_blank"
           >
             Learn More

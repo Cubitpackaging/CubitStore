@@ -2,33 +2,43 @@
 
 ## 🎯 Overview
 
-**Cubit Packaging** is a powerful B2B ecommerce platform built with Medusa 2.0 and Next.js 15, designed specifically for packaging solutions and B2B commerce.
+**Cubit Packaging** is an Eco-Smart Custom Packaging Solutions company offering beautifully printed, sustainable boxes, mailers, and pouches with built-in digital experiences. This B2B ecommerce platform enables businesses to order custom packaging with low minimums, fast U.S. production, and free design support.
 
-## 🌐 Live URLs
+**Specialties:**
+- Custom boxes with full-color printing
+- Eco-friendly and sustainable materials
+- Smart packaging with QR codes and NFC tags
+- Mylar bags (food-grade safe, resealable)
+- Tech-integrated packaging solutions
+- Spot UV, foil stamping, embossing
 
-- **Storefront**: https://cubitpackaging.com
-- **Admin Panel**: https://admin.cubitpackaging.com/app
-- **API**: https://admin.cubitpackaging.com
+## 🌐 Testing URLs (Subdomain)
+
+- **B2B Storefront**: https://e.cubitpackaging.com
+- **Admin Panel**: https://admin.e.cubitpackaging.com/app
+- **API**: https://admin.e.cubitpackaging.com
 
 ## 🚀 Features
 
 ### B2B Commerce Features
-- **Company Management** - Customers can manage their company and invite employees
-- **Spending Limits** - Company admins can assign spending limits to employees
-- **Bulk Add-to-Cart** - Add multiple product variants to cart at once
-- **Quote Management** - Request, manage, and approve quotes
-- **Order Editing** - Merchants can edit orders and quotes
-- **Company Approvals** - Mandatory approvals before cart finalization
-- **Merchant Approvals** - Approval processes for order fulfillment
-- **Promotions** - Manual and automatic promotions
-- **Free Shipping Nudge** - Progress indicator toward free shipping
+- **Company Management** - Businesses can manage their company accounts and invite employees
+- **Spending Limits** - Company admins control employee purchasing limits
+- **Bulk Add-to-Cart** - Add multiple packaging variants (boxes, bags, sizes) to cart at once
+- **Quote Management** - Request custom packaging quotes, manage approvals, and track orders
+- **Order Editing** - Modify packaging orders (quantities, designs, specifications)
+- **Company Approvals** - Multi-level approval workflows for large packaging orders
+- **Merchant Approvals** - Internal approval processes for custom packaging requests
+- **Promotions** - Volume discounts, seasonal promotions for packaging orders
+- **Free Shipping Nudge** - Progress indicator toward free shipping thresholds
 
 ### Ecommerce Features
-- Product Pages & Collections
-- Shopping Cart & Checkout
-- User Accounts & Authentication
-- Order Management
-- Payment Processing (Stripe, PayPal)
+- **Product Catalog** - Custom boxes, mylar bags, mailers, pouches
+- **Product Collections** - Organized by packaging type, material, size
+- **Shopping Cart & Checkout** - Streamlined ordering for packaging solutions
+- **User Accounts** - Business accounts with company management
+- **Order Management** - Track packaging orders from quote to delivery
+- **Payment Processing** - Stripe and PayPal integration
+- **Quote Requests** - Custom packaging quote system for unique requirements
 
 ## 🛠️ Tech Stack
 
@@ -66,7 +76,7 @@ cp .env.template .env
 yarn install
 yarn medusa db:create
 yarn medusa db:migrate
-yarn medusa user -e admin@cubitpackaging.com -p yourpassword -i admin
+yarn medusa user -e admin@e.cubitpackaging.com -p yourpassword -i admin
 yarn dev
 ```
 
@@ -93,9 +103,10 @@ yarn dev
 
 See deployment guides for complete environment variable configuration.
 
-### Key Domains
-- Storefront: `cubitpackaging.com`
-- Admin: `admin.cubitpackaging.com`
+### Key Domains (Testing)
+- B2B Storefront: `e.cubitpackaging.com` (testing subdomain)
+- Admin Panel: `admin.e.cubitpackaging.com` (testing subdomain)
+- Production: `cubitpackaging.com` (main website)
 
 ## 🏗️ Deployment
 
@@ -121,6 +132,7 @@ Proprietary - Cubit Packaging
 
 ## 🔗 Links
 
-- **Website**: https://cubitpackaging.com
-- **Admin**: https://admin.cubitpackaging.com/app
+- **Main Website**: https://cubitpackaging.com (Eco-Smart Custom Packaging)
+- **B2B Storefront (Testing)**: https://e.cubitpackaging.com
+- **Admin Panel (Testing)**: https://admin.e.cubitpackaging.com/app
 - **Built with**: [Medusa](https://medusajs.com) & [Next.js](https://nextjs.org)
