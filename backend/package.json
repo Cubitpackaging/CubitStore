@@ -1,8 +1,8 @@
 {
-  "name": "medusa-b2b-starter",
+  "name": "cubit-b2b-backend",
   "version": "0.0.1",
-  "description": "A starter for Medusa B2B projects.",
-  "author": "Medusa (https://medusajs.com)",
+  "description": "Cubit Packaging B2B Commerce Backend - Built with Medusa 2.0",
+  "author": "Cubit Packaging (https://cubitpackaging.com)",
   "license": "MIT",
   "keywords": [
     "sqlite",
@@ -10,7 +10,9 @@
     "typescript",
     "ecommerce",
     "headless",
-    "medusa"
+    "medusa",
+    "cubit",
+    "b2b"
   ],
   "scripts": {
     "build": "medusa build",
