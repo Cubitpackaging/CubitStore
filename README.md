@@ -1,12 +1,12 @@
 <h1 align="center">
-  <a href="http://www.amitmerchant.com/electron-markdownify"><img src="https://github.com/user-attachments/assets/38ba3a7b-e07b-4117-8187-7b171eae3769" alt="B2B Commerce Starter" width="80" height="80"></a>
+  <a href="https://cubitpackaging.com"><img src="https://github.com/user-attachments/assets/38ba3a7b-e07b-4117-8187-7b171eae3769" alt="Cubit B2B Commerce" width="80" height="80"></a>
   <br>
   <br>
-  Medusa B2B Commerce Starter
+  Cubit B2B Commerce Platform
   <br>
 </h1>
 
-<p align="center">Customizable B2B ecommerce built with <a href="https://medusajs.com/" target="_blank">Medusa 2.0</a> & Next.js Storefront</p>
+<p align="center">B2B ecommerce platform for <a href="https://cubitpackaging.com" target="_blank">Cubit Packaging</a> - Eco-Smart Custom Packaging Solutions. Built with <a href="https://medusajs.com/" target="_blank">Medusa 2.0</a> & Next.js Storefront</p>
 
 <p align="center">
   <a href="https://github.com/medusajs/medusa/blob/master/CONTRIBUTING.md">
@@ -113,7 +113,7 @@ For a full feature overview, please visit [the project wiki](https://github.com/
 
 ## Quickstart
 
-#### Setup Medusa project
+#### Setup Cubit B2B Platform
 
 ```bash
 # Clone the repository
@@ -159,14 +159,14 @@ yarn install
 - ✅ Add token to this var - `NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY`
 
 ```
-# Start Medusa storefront
+# Start Cubit storefront
 yarn dev
 ```
 
-Visit the following links to see the Medusa storefront & admin
+Visit the following links to see the Cubit storefront & admin
 
-- [Medusa Admin](http://localhost:9000/app)
-- [Medusa Storefront](http://localhost:8000)
+- [Cubit Admin](http://localhost:9000/app)
+- [Cubit Storefront](http://localhost:8000)
 
 &nbsp;
 
@@ -186,11 +186,17 @@ To reflect any changes made to data models, make sure to run `npx medusa db:migr
 
 # Resources
 
-#### Learn more about Medusa
+#### Learn more about Medusa (Framework)
 
 - [Website](https://www.medusajs.com/)
 - [GitHub](https://github.com/medusajs)
 - [2.0 Documentation](https://docs.medusajs.com/v2)
+
+#### Cubit Packaging
+
+- [Website](https://cubitpackaging.com) - Eco-Smart Custom Packaging Solutions
+- [B2B Storefront (Testing)](https://e.cubitpackaging.com) - Custom boxes, mailers & pouches
+- [Admin Panel (Testing)](https://admin.e.cubitpackaging.com/app) - Backend management
 
 #### Learn more about Next.js
 

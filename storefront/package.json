@@ -1,12 +1,15 @@
 {
-  "name": "medusa-next",
+  "name": "cubit-storefront",
   "version": "1.0.3",
   "private": true,
-  "author": "Riqwan Thamir <riqwan@medusajs.com> & Victor Gerbrands <victor@medusajs.com> (https://www.medusajs.com)",
-  "description": "Medusa B2B Starter Storefront",
+  "author": "Cubit Packaging (https://cubitpackaging.com)",
+  "description": "Cubit Packaging B2B Storefront - Eco-Smart Custom Packaging Solutions. Built with Next.js 15",
   "keywords": [
-    "medusa-storefront",
-    "medusa-b2b-storefront"
+    "cubit",
+    "storefront",
+    "b2b-storefront",
+    "ecommerce",
+    "nextjs"
   ],
   "scripts": {
     "dev": "next dev -p 8000",

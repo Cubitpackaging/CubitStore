@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  medusa-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: medusa-backend
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - STORE_CORS=${STORE_CORS}
+      - ADMIN_CORS=${ADMIN_CORS}
+      - AUTH_CORS=${AUTH_CORS}
+      - DATABASE_URL=${DATABASE_URL}
+      - DB_NAME=${DB_NAME}
+      - REDIS_URL=${REDIS_URL}
+      - JWT_SECRET=${JWT_SECRET}
+      - COOKIE_SECRET=${COOKIE_SECRET}
+      - ADMIN_URL=${ADMIN_URL}
+      - MEDUSA_BACKEND_URL=${MEDUSA_BACKEND_URL}
+      - MEDUSA_WORKER_MODE=${MEDUSA_WORKER_MODE:-server}
+      - DISABLE_MEDUSA_ADMIN=${DISABLE_MEDUSA_ADMIN:-false}
+      - SMTP_HOST=${SMTP_HOST}
+      - SMTP_PORT=${SMTP_PORT}
+      - SMTP_SECURE=${SMTP_SECURE:-true}
+      - SMTP_USER=${SMTP_USER}
+      - SMTP_PASS=${SMTP_PASS}
+      - SMTP_FROM=${SMTP_FROM}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - AUTO_GENERATE_DESCRIPTIONS=${AUTO_GENERATE_DESCRIPTIONS:-false}
+    ports:
+      - "9000:9000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - coolify
+
+networks:
+  coolify:
+    external: true
